@@ -22,7 +22,7 @@ function getComputerChoice(){
 // funzione per la persona che sceglie
 
 function getHumanChoice(){
-    let answer = prompt("Choose: rock paper scissors").toLowerCase();
+    let answer = (prompt("Choose: rock paper scissors")).toLowerCase();
    
     if(answer === "rock"){
         return "rock";
@@ -75,11 +75,40 @@ function playRound(humanChoice,computerChoice){
 
 
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 
-console.log("hai scelto : ",humanSelection)
+/*console.log("hai scelto : ",humanSelection)
 console.log("il computer ha scelto : ",computerSelection)
 console.log(playRound(humanSelection,computerSelection));
-console.log("il risultato è : ", humanScore, "-" ,computerScore)
+console.log("il risultato è : ", humanScore, "-" ,computerScore)*/
+
+// funzione per giocare 5 round
+
+let round = 1;
+
+while(round<=5){
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log("round : ", round);
+    console.log("hai scelto : ",humanSelection);
+    console.log("il computer ha scelto : ", computerSelection);
+    console.log(playRound(humanSelection,computerSelection));
+    console.log("il punteggio è : ",humanScore,"-",computerScore)
+    round++;
+}
+console.log("punteggio finale : ",humanScore,"-",computerScore);
+
+if (humanScore > computerScore) {
+    console.log("Hai vinto la partita!");
+} else if (humanScore < computerScore) {
+    console.log("Hai perso la partita!");
+} else {
+    console.log("È un pareggio!");
+}
+
+
+
+
+
+
+

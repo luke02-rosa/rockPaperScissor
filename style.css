@@ -1,0 +1,30 @@
+#bottoni{
+    display: flex;
+    justify-content: center;
+    
+}
+#risultato{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.immagine1{
+    width: 40px;
+    height: 40px;
+   
+}
+
+#contenitore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+   

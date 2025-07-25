@@ -84,9 +84,9 @@ console.log("il risultato è : ", humanScore, "-" ,computerScore)*/
 
 // funzione per giocare 5 round
 
-let round = 1;
+let round = 0;
 
-while(round<=5){
+/*while(round<=5){
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     console.log("round : ", round);
@@ -104,11 +104,59 @@ if (humanScore > computerScore) {
     console.log("Hai perso la partita!");
 } else {
     console.log("È un pareggio!");
-}
+}*/
 
 
+const buttons = document.querySelector("#bottoni");
+const rockbutton = document.querySelector(".button1");
+const paperbutton = document.querySelector(".button2");
+const scissorsbutton = document.querySelector(".button3");
 
 
+rockbutton.addEventListener("click",function(){
+    const computerSelection = getComputerChoice();
+    playRound("rock", computerSelection);
+  
+
+    const risultato = document.querySelector(".risultatoP");
+    risultato.innerHTML = "hai scelto rock<br>il computer ha scelto " + computerSelection +"<br>"+  playRound("rock",computerSelection);
+
+    round++;
+    
+     aggiornaRound();
+    
+
+} )
+
+paperbutton.addEventListener("click",function(){
+    const computerSelection = getComputerChoice();
+    playRound("paper", computerSelection);
+     
+    
+    
+    const risultato = document.querySelector(".risultatoP");
+    risultato.innerHTML = "hai scelto paper<br>il computer ha scelto " + computerSelection +"<br>"+  playRound("paper",computerSelection);
+
+    round++;
+     aggiornaRound();
+
+} )
+
+scissorsbutton.addEventListener("click",function(){
+    const computerSelection = getComputerChoice();
+    playRound("scissors", computerSelection);
+     
+   const risultato = document.querySelector(".risultatoP");
+    risultato.innerHTML = "hai scelto scissors<br>il computer ha scelto " + computerSelection +"<br>"+  playRound("scissors",computerSelection);
+
+    round++;
+    aggiornaRound();
+
+} )
+   function aggiornaRound(){
+  const rounds = document.querySelector(".rounds");
+  rounds.innerHTML = "round : "+ round;
+  };
 
 
 
